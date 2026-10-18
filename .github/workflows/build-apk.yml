@@ -1,4 +1,4 @@
-Name: Build CineTV APK
+name: Build CineTV APK
 
 on:
   workflow_dispatch:
