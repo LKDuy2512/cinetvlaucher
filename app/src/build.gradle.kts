@@ -2,14 +2,26 @@ plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
 }
+
 android {
     namespace = "vn.cinevn.cinetv"
     compileSdk = 35
+
     defaultConfig {
         applicationId = "vn.cinevn.cinetv"
         minSdk = 23
-        targetSdk = 28
+        targetSdk = 35 // Nên nâng bằng compileSdk để tương thích tốt hơn với Android mới
         versionCode = 1
         versionName = "1.0"
+    }
+
+    // Bắt buộc phải có đoạn này để đồng bộ Java 17
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
+    }
+
+    kotlinOptions {
+        jvmTarget = "17"
     }
 }
